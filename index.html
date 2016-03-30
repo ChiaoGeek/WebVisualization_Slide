@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>浅谈WEB可视化</title>
+
+  <meta name="description" content="A jQuery library for modern HTML presentations">
+  <meta name="author" content="Caleb Troughton">
   <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>Web可视化演讲</title>
-
-  <!-- Required stylesheet -->
+  <!-- Core and extension CSS files -->
   <link rel="stylesheet" media="screen" href="core/deck.core.css">
-
-  <!-- Extension CSS files go here. Remove or add as needed. -->
   <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
   <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
   <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
@@ -26,31 +30,184 @@
   <!-- Basic black and white print styles -->
   <link rel="stylesheet" media="print" href="core/print.css">
 
-  <!-- Required Modernizr file -->
   <script src="modernizr.custom.js"></script>
 </head>
+
 <body>
   <div class="deck-container">
 
-    <!-- Begin slides. Just make elements with a class of slide. -->
-
-    <section class="slide">
-      <h1>Slide</h1>
+    <!-- Begin slides -->
+    <section class="slide" id="title-slide">
+      <h1>浅谈数据可视化</h1>
     </section>
 
-    <section class="slide">
-      <h1>Content</h1>
+    <section class="slide" id="quick-view">
+      <h2>初探可视化</h2>
+      <ul>
+        <li class="slide" id="means">
+          <h3 >可视化概念</h3>
+          <p class="slide" id="whats-visulasition">指用于创建图形、图像或动画，以便交流沟通讯息的任何技术和方法</p>
+        </li>
+
+        <li class="slide" id="vs-class">
+          <h3 >可视化分类</h3>
+            <iframe class="slide" id="tree-iframe" src="plugin/d3/tree-relationship/index.html" width="1000" height="700" style="overflow: hidden;" frameborder="0"></iframe>
+        </li>
+
+      </ul>
+      
     </section>
 
-    <section class="slide">
-      <h1>Here</h1>
+    <section class="slide" id="data-vs-1">
+      <h2>数据可视化</h2>
+      <p class="slide" id="data-vs-2">数据可视化主要是借助于图形化手段，清晰有效地传达数据信息。</p>
+          <iframe class="slide" id="collapsible-tree" src="plugin/d3/collapsible-tree/index.html" width="1000" height="700" style="overflow: hidden;" frameborder="0"></iframe>
     </section>
 
-    <!-- End slides. -->
+    <section class="slide" id="base-zhu">
+      <h2>柱状图</h2>
+      <p class="slide" id="base-zhu-p">柱状图是最常见的图表，也最容易解读。它的适用场合是二维数据集（每个数据点包括两个值x和y），但只有一个维度需要比较。假币数量分布就是二维数据，"地区"和"假币张数"就是它的两个维度，但只需要比较"假币张数"这一个维度。柱状图利用柱子的高度，反映数据的差异。肉眼对高度差异很敏感，辨识效果非常好。柱状图的局限在于只适用中小规模的数据集。</p>
+          <iframe class="slide" id="tree-iframe-12" src="plugin/highchart/bar/index.html" width="1000" height="700"  frameborder="0"></iframe>
+    </section>
 
-    <!-- Begin extension snippets. Add or remove as needed. -->
+    <section class="slide" id="base-zhe">
+      <h2>折线图</h2>
+      <p class="slide" id="base-zhe-p">折线图适合连续的二维大数据集和单个离散的数据点等场合。</p>
+          <iframe class="slide" id="tree-iframe-zhe" src="http://localhost/~changzhao619/2016/cee_test/?m=Index&a=m1_sub1" width="1000" height="700"  frameborder="0"></iframe>
+    </section>
 
-    <!-- deck.navigation snippet -->
+    <section class="slide" id="base-pie">
+      <h2>饼图</h2>
+      <p id="base-pie-p">饼图是一种应该避免使用的图表，因为肉眼对面积大小不敏感。</p>
+      <h4 class="slide"  id="base-pie-h4">举个栗子：</h4>
+      <p class="slide" id="base-pie-p2" style="width: 700px; margin: auto;">
+         <img src="img/pie.png" style="float: left;"  id="base-pie-img-pie" alt="pie">
+         <img src="img/bar.png" style="float: right;"  id="base-pie-img-bar" alt="bar">
+      </p>
+      <p class="slide" id="base-pie-p3">上图中，左侧饼图的五个色块的面积排序，不容易看出来。换成柱状图，就容易多了。一般情况下，总是应该用柱状图替代饼图。但是有一个例外，就是反映某个部分占整体的比重，比如要展示垃圾邮件占总邮件的百分比。
+      </p>
+    </section>
+
+    <section class="slide" id="base-scatter">
+      <h2>散点图</h2>
+      <p id="base-scatter-p">散点图适用于三维数据集的比较。</p>
+      <h4 class="slide"  id="base-scatter-h4">举个栗子：</h4>
+          <iframe class="slide" id="tree-iframe-zhe" src="plugin/d3/scatter/index.html" width="1200" height="700"  frameborder="0"></iframe>
+    </section>
+
+    <section class="slide" id="base-bubble">
+      <h2>气泡图</h2>
+      <p id="base-scatter-p">气泡图其实是散点图的一种变体，通过每个点的面积大小，反映第三维，通过颜色反应第四维。因为用户不善于判断面积大小，所以气泡图只适用不要求精确辨识第三维的场合。</p>
+      <h4 class="slide"  id="base-scatter-h4">举个栗子：</h4>
+          <iframe class="slide" id="tree-iframe-zhe" src="plugin/highchart/bubble/index.html" width="1200" height="700"  frameborder="0"></iframe>
+    </section>
+    <section class="slide" id="base-rander">
+      <h2>雷达图</h2>
+      <p id="base-scatter-p">雷达图适用于多维数据（四维以上），且每个维度必须可以排序的。但是，它有一个局限，就是数据点最多6个，否则无法辨别，因此适用场合有限。</p>
+      <h4 class="slide"  id="base-scatter-h4">举个栗子：</h4>
+          <iframe class="slide" id="tree-iframe-zhe" src="plugin/echarts/rander/index.html" width="1000" height="700"  frameborder="0"></iframe>
+    </section>
+
+    <section class="slide" id="tree-map">
+      <h2>矩形树图</h2>
+      <p id="tree-map-p">雷达图适用于多维数据（四维以上），且每个维度必须可以排序的。但是，它有一个局限，就是数据点最多6个，否则无法辨别，因此适用场合有限。</p>
+      <h4 class="slide"  id="tree-map-h4">举个栗子：</h4>
+          <iframe class="slide" id="tree-map-zhe" src="plugin/d3/tree-map/index.html" width="1200" height="700"  frameborder="0"></iframe>
+    </section>
+
+    <section class="slide" id="heat-map">
+      <h2>热力图</h2>
+      <p id="heat-map-p">雷达图适用于多维数据（四维以上），且每个维度必须可以排序的。但是，它有一个局限，就是数据点最多6个，否则无法辨别，因此适用场合有限。</p>
+      <h4 class="slide"  id="heat-map-h4">举个栗子：</h4>
+          <iframe class="slide" id="heat-map-zhe" src="plugin/d3/heat-map/index.html" width="1200" height="700"  frameborder="0"></iframe>
+    </section>
+
+    <section class="slide" id="gauge">
+      <h2>仪表盘</h2>
+      <p id="gauge-p">多用于实时数据的可视化</p>
+      <h4 class="slide"  id="gauge-h4">举个栗子：</h4>
+          <img src="img/smart-car.jpg" class="slide"  id="gauge-img" alt="smart-car">
+    </section>
+    <section class="slide" id="random">
+      <h2>动态刷新</h2>
+      <p id="random-p">雷达图适用于多维数据（四维以上），且每个维度必须可以排序的。但是，它有一个局限，就是数据点最多6个，否则无法辨别，因此适用场合有限。</p>
+      <h4 class="slide"  id="heat-map-h4">举个栗子：</h4>
+          <iframe class="slide" id="heat-map-zhe" src="plugin/highchart/live-update/index.html" width="1200" height="700"  frameborder="0"></iframe>
+    </section>
+    <section class="slide" id="gauge">
+      <h2>中国地理图</h2>
+      <p id="gauge-p">多用于实时数据的可视化</p>
+      <h4 class="slide"  id="gauge-h4">举个栗子：</h4>
+          <iframe class="slide" id="heat-map-zhe" src="http://localhost/~changzhao619/2015/jobnedu2/index.php" width="1200" height="700"  frameborder="0"></iframe>
+    </section>
+
+    <section class="slide" id="themes">
+      <h2>Echarts</h2>
+      <p>一个纯 Javascript的图表库，可以流畅的运行在PC和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖轻量级的 Canvas 类库 ZRender，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;ECharts&lt;/title&gt;
+    &lt;!-- 引入 echarts.js --&gt;
+    &lt;script src="echarts.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 为ECharts准备一个具备大小（宽高）的Dom --&gt;
+    &lt;div id="main" style="width: 600px;height:400px;"&gt;&lt;/div&gt;
+    &lt;script type="text/javascript"&gt;
+      //代码片段
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          
+    </section>
+    <section class="slide" id="themes">
+      <h2>Echarts</h2>
+      <p>一个纯 Javascript的图表库，可以流畅的运行在PC和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖轻量级的 Canvas 类库 ZRender，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。</p>
+      <pre><code>       // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            }
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);</code></pre>
+         
+    </section>
+
+
+    <section class="slide" id="themes">
+      <h2>D3.js</h2>
+      <p>D3 的全称是（Data-Driven Documents），顾名思义可以知道是一个被数据驱动的文档。听名字有点抽象，说简单一点，其实就是一个 JavaScript 的函数库，使用它主要是用来做数据可视化的。</p>
+      <pre><code>&lt;script src="d3.v3.min.js"&gt;&lt;/script&gt;</code></pre>
+      <img src="img/d3.png" alt="D3">
+    </section>
+
+    <section class="slide" id="digging-deeper">
+      <h2>参考文献</h2>
+      <ul>
+        <li class="slide" id="extensions-goto">
+          <strong>阮一峰的个人网站：</strong>http://www.ruanyifeng.com/blog/2014/11/basic-charts.html
+        </li>
+
+        <li class="slide" id="extensions-menu">
+          <strong>Data Visualization with JavaScript：</strong>http://jsdatav.is/intro.html
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- deck.navigation snippet --> 
     <div aria-role="navigation">
       <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
       <a href="#" class="deck-next-link" title="Next">&#8594;</a>
@@ -65,31 +222,29 @@
 
     <!-- deck.goto snippet -->
     <form action="." method="get" class="goto-form">
-      <label for="goto-slide">Go to slide:</label>
+      <label for="goto-slide">Go  nto slide:</label>
       <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
       <datalist id="goto-datalist"></datalist>
       <input type="submit" value="Go">
     </form>
-
-    <!-- End extension snippets. -->
   </div>
 
-<!-- Required JS files. -->
 <script src="jquery.min.js"></script>
-<script src="core/deck.core.js"></script>
 
-<!-- Extension JS files. Add or remove as needed. -->
+<!-- Deck Core and extensions -->
+<script src="core/deck.core.js"></script>
 <script src="extensions/menu/deck.menu.js"></script>
 <script src="extensions/goto/deck.goto.js"></script>
 <script src="extensions/status/deck.status.js"></script>
 <script src="extensions/navigation/deck.navigation.js"></script>
 <script src="extensions/scale/deck.scale.js"></script>
 
-<!-- Initialize the deck. You can put this in an external file if desired. -->
+<!-- Initialize the deck -->
 <script>
-  $(function() {
-    $.deck('.slide');
-  });
+$(function() {
+  $.deck('.slide');
+});
 </script>
+
 </body>
 </html>

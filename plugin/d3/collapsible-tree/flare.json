@@ -1,0 +1,46 @@
+{
+ "name": "数据可视化",
+ "children": [
+  {
+   "name": "基本的图表",
+   "children": [ 
+      {"name": "柱状图", "size": 1},
+      {"name": "折线图", "size": 1},
+      {"name": "饼图", "size": 1},
+      {"name": "散点图", "size": 1},
+      {"name": "气泡图", "size": 1},
+      {"name": "雷达图", "size": 1}
+
+    ]
+  },
+
+  {
+   "name": "高级图表",
+   "children": [ 
+      {"name": "矩阵树图", "size": 3938},
+      {"name": "树状图", "size": 3812},
+      {"name": "热力地图", "size": 6714},
+      {"name": "仪表盘", "size": 6714}
+
+    ]
+  },
+  
+  {
+   "name": "时间的可视化",
+   "children": [ 
+      {"name": "动态实时刷新", "size": 3938}
+
+    ]
+  },
+
+  {
+   "name": "地理图表",
+   "children": [ 
+      {"name": "中国地图", "size": 3938}
+
+    ]
+  }
+
+
+  ]
+}
