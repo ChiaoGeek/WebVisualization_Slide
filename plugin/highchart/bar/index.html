@@ -15,6 +15,7 @@
     
  
             <div id="container" style="width: 1000px; height: 600px;"></div>
+            
        
 
 
@@ -22,7 +23,7 @@
 <script type="text/javascript">
     
       $(function () {
-    $('#container').highcharts({
+        var char1 = $('#container').highcharts({
         chart: {
             type: 'column',
             
@@ -78,6 +79,62 @@
         }]
     });
 //////////////////////////////////////////////////////////////////////////////////
+        var char2 = $('#container1').highcharts({
+        chart: {
+            type: 'column',
+            
+        },
+        title: {
+            text: '假币信息分析图'
+        },
+        xAxis: {
+            categories: ['昌邑', '船营', '龙潭', '丰满', '高新', '开发区', '永吉', '蛟河', '舒兰', '桦甸', '磐石'],
+            labels: {
+                rotation: 0,
+                align: 'center',
+
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '统计次数'
+            },
+
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.y} 次</b>',
+        },
+        credits:{
+            enabled:false // 禁用版权信息
+        },
+
+        series: [{
+            name: 'Population',
+            data: [300, 290, 280, 270, 260, 250, 240, 230, 220, 210, 200],
+            dataLabels: {
+                enabled: true,
+                rotation: 360,
+                color: '#FFFFFF',
+                align: 'center',
+                x: 0,
+                y: 20,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif',
+                    textShadow: '0 0 3px black'
+                }
+            }
+        }]
+    });
+
 
 
 });
